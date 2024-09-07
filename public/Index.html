@@ -9,9 +9,49 @@
 <body>
     <header>
         <h1>Algorithm Visualizer</h1>
-        </nav>
-            <ul>
-                <li><a href=""
-            </ul>
-        </nav>
+        <p>Select an algorithm to visualize its steps.</p>
     </header>
+
+    <section id=""controls>
+        <h2>Select Algorithm</h2>
+
+        <div>
+            <h3>Binary Search</h3>
+            <input type="text" id="binarySearchArray" placeholder="Enter sorted array(comma)">
+            <input type="number" id="binarySearchTarget" placeholder="Enter target value">
+            <button onclick="handleBinarySearch()">Visualize Binary Search</button>
+        </div>
+
+        <div>
+            <h3>Linked List Insert</h3>
+            <input type="number" id="LinkedListValue" placeholder="Enter value to insert">
+            <button onclick="handleLinkedList()"> Visualize Linked List Insert</button>
+        </div>
+
+        <div>
+            <h3>AVL Tree Insert</h3>
+            <input type="number" id="avlInsertValue" placeholder="Enter value to insert">
+            <button onclick="handleAVLInser()"> Visualize AVL Insert</buttom>
+        </div>
+
+        <div>
+            <h3> Graph Traversal (BFS & DFS)</h3>
+            <textarea id="graphData" placeholder="Enter graph data (JSON format)"></textarea>
+            <input type="number" id="graphStartNode" placeholder="Enter starting node">
+            <button conclick="handleBFS()">Visualize BFS</button>
+            <button onclick="handleDFS()">Visualize DFS</button>
+        </div>
+    </section>
+<section id="visualization">
+    <h2>visualization</h2>
+    <div id="visualization-container"></div>
+</section>
+
+<footer>
+    <p>Created by Kalyan Gautam</p>
+</footer>
+
+<script src="visualization.js"></script>
+</body>
+</html>
+
