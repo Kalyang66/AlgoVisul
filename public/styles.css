@@ -1,0 +1,80 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 130%; /* Ensure the body takes full viewport height */
+}
+
+body {
+    background: linear-gradient(45deg, #FF4500, #FF8C00, #FFD700, #FF4500);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+}
+
+header {
+    text-align: center;
+    padding: 5px; /* Reduced padding */
+    background-color: #333333; /* Dark Gray Background */
+    color: #FFD700; /* Gold Text */
+    width: 100%; /* Full width */
+    position: fixed; /* Fixed positioning */
+    top: 0; /* Stay at the top */
+    left: 0; /* Ensure it covers full width */
+    z-index: 1000; /* Ensure it's above other elements */
+    font-size: 14px; /* Reduced font size */
+}
+
+section#controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px; /* Space between columns */
+    padding: 20px 20px 20px; /* Adjusted top padding to avoid overlap with header */
+    width: 100%; /* Full width to avoid overflow */
+    max-width: 200px; /* Limit the width for better alignment */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+section#controls div {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+}
+
+#visualization-container {
+    margin-top: 20px;
+    border: 1px solid #333333; /* Dark Gray border */
+    padding: 20px;
+    width: 80vw; /* Increase width */
+    min-height: 200px; /* Increase minimum height */
+    background-color: #1a1a1a; /* Slightly lighter dark background */
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+button {
+    margin: 5px;
+    padding: 10px 10px; /* Increased padding for better button size */
+    font-size: 12px;
+    cursor: pointer;
+    background-color: #FF4500; /* Red-Orange Background */
+    color: #ffffff; /* White text */
+    border: 2px solid #FFD700; /* Gold Border */
+    border-radius: 10px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #FFD700; /* Gold Background on hover */
+    color: #000000; /* Black text on hover */
+    border-color: #FF4500; /* Red-Orange Border on hover */
+    transform: scale(1.1); /* Slightly enlarges the button */
+}
