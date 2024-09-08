@@ -1,9 +1,8 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const db = require('./database');
-const router = express.Router();
+const router = express.Router(); // Make sure to use 'router'
 
-// Register a New User
 router.post('/register', async (req, res) => {
   const { username, password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -14,7 +13,6 @@ router.post('/register', async (req, res) => {
   res.redirect('/');
 });
 
-// Login a User
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
   const result = await db.query('SELECT * FROM users WHERE username = $1', [username]);
@@ -34,7 +32,6 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Logout a User
 router.post('/logout', (req, res) => {
   req.session.destroy();
   res.redirect('/');

@@ -4,6 +4,7 @@ const session = require('express-session');
 const { Pool } = require('pg');
 const userRoutes = require('./user');
 const db = require('./database');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,18 +18,24 @@ app.use(session({
   saveUninitialized: true,
 }));
 
-// Routes
-app.use('/user', userRoutes);
+app.use('/user', userRoutes); // User routes (e.g., login, register)
 
-// Serve static files (HTML, CSS, etc.)
-app.use(express.static('public'));
-
-// Home Route
+// Home Route (for index.html)
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+  res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-// Start Server
+// Login Route
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/login.html'));
+});
+
+// Register Route
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/register.html'));
+});
+
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
