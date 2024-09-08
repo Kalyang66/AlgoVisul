@@ -1,9 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-const { Pool } = require('pg');
-const userRoutes = require('./user');
-const db = require('./database');
 const path = require('path');
 
 const app = express();
@@ -18,21 +15,20 @@ app.use(session({
   saveUninitialized: true,
 }));
 
-app.use('/user', userRoutes); // User routes (e.g., login, register)
+// Serve static files from the 'public' directory within the 'Algorithms-Vis' project folder
+app.use(express.static(path.join(__dirname, '../public'))); // Note the path adjustment
 
-// Home Route (for index.html)
+// Routes for HTML files
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
+  res.sendFile(path.join(__dirname, '../public/index.html')); // Note the path adjustment
 });
 
-// Login Route
 app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/login.html'));
+  res.sendFile(path.join(__dirname, '../public/login.html')); // Note the path adjustment
 });
 
-// Register Route
 app.get('/register', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/register.html'));
+  res.sendFile(path.join(__dirname, '../public/register.html')); // Note the path adjustment
 });
 
 // Start the server
