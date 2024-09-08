@@ -1,7 +1,7 @@
 {
     "name": "algorithm-visualizer",
     "version": "1.0.0",
-    "description": "A web app to visualize algorithms with user login",
+    "description": "A web app to visualize algorithms",
     "main": "server/app.js",
     "scripts": {
       "start": "node server/app.js"
