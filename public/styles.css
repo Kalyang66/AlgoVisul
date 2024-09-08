@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 160%; /* Full viewport height */
+    height: 130%;
 }
 
 body {
@@ -15,6 +15,7 @@ body {
     font-family: Arial, sans-serif; /* Set a clean font */
 }
 
+/* Header */
 header {
     text-align: center;
     padding: 10px; /* Increased padding for better spacing */
@@ -28,22 +29,25 @@ header {
     font-size: 18px; /* Slightly increased font size */
 }
 
-header nav{
+header nav {
     position: absolute;
     top: 20px;
     right: 50px;
 }
-header nav a{
+
+header nav a {
     margin-left: 10px;
-    color:#FFD700;
+    color: #FFD700;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
 }
-header nav a:hover{
-    color:#FF8C00;
+
+header nav a:hover {
+    color: #FF8C00;
 }
 
+/* Main Content */
 section#controls {
     display: grid;
     grid-template-areas:
@@ -110,6 +114,45 @@ button:hover {
     overflow: hidden;
 }
 
+#login-section, #register-section {
+    padding: 20px;
+    max-width: 500px;
+    margin: 100px auto; /* Center horizontally and add margin from top */
+    background-color: #f9f9f9; /* Light background color for forms */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#login-section form, #register-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-section div, #register-section div {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+footer {
+    padding: 10px;
+    background-color: #333333; /* Dark Gray Background */
+    color: #FFD700; /* Gold Text */
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+footer nav p a{
+    margin-left: 10px;
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+footer nav p a:hover {
+    color: #FF8C00;
+}
+/* Keyframes */
 @keyframes gradientAnimation {
     0% { background-position: 0% 0%; }
     50% { background-position: 100% 100%; }
